@@ -7,9 +7,9 @@ const ModalContainer = (props) => {
         <div className="modal-header">
           <img src="" alt="" />
           <h3 id="card-name">{props.item.name}</h3>
-          <span id="x-button" onClick={() => props.modalControl(false)}>
+          <button id="x-button" onClick={() => props.modalControl(false)}>
             X
-          </span>
+          </button>
         </div>
 
         <div className="modal-information">

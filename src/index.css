@@ -151,12 +151,16 @@ p {
   background-color: rgba(0, 0, 0, 0);
   color: black;
   font-weight: 800;
-  float: right;
+  display: flex;
   cursor: pointer;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 5px;
-  top: 0;
+  border: none;
+  top: -5px;
   right: 0;
+  align-self: flex-start;
+  position: absolute;
+  margin-right:0.3rem;
 }
 
 #x-button:hover {
