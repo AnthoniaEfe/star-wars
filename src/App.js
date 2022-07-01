@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import Card from "./cardComponent";
 
 function App() {
-  const [endPoints, setEndPoints] = useState({});
+  // const [selectedItem, setSelectedItem] = useState();
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
-    fetch("https://swapi.dev/api/")
+    fetch("https://swapi.dev/api/people")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        setEndPoints(data);
+        setItems(data.results);
         console.log(data);
       });
   }, []);
 
-  console.log(endPoints);
   return (
     <div className="container">
       <header>
@@ -23,12 +25,21 @@ function App() {
 
       <main>
         <div className="links">
-          <a href={`${endPoints.people}`}>People</a>
-          <a href={`${endPoints.vehicles}`}>Vehicles</a>
-          <a href={`${endPoints.starships}`}>Starships</a>
-          <a href={`${endPoints.planets}`}>Planets</a>
-          <a href={`${endPoints.films}`}>Films</a>
-          <a href={`${endPoints.species}`}>Species</a>
+          <a href="">People</a>
+          <a href="">Vehicles</a>
+          <a href="">Starships</a>
+          <a href="">Planets</a>
+          <a href="">Films</a>
+          <a href="">Species</a>
+        </div>
+
+        <div className="list-container">
+          <h2 className="list-title">People</h2>
+          <div className="list">
+            {items.map((item, index) => (
+              <Card item={item} key={index}/>
+            ))}
+          </div>
         </div>
       </main>
     </div>
