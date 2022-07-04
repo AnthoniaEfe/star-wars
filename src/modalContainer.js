@@ -1,11 +1,15 @@
 import React from "react";
 
 const ModalContainer = (props) => {
+  let images =
+    "https://avatars.dicebear.com/api/open-peeps/" +
+    `${props.item.name}` +
+    ".svg";
   return (
     <div className="modalContainer" id={props.index}>
       <div className="modal">
         <div className="modal-header">
-          <img src="" alt="" />
+          <img src={images} alt="" width="60px" height="60px" />
           <h3 id="card-name">{props.item.name}</h3>
           <button id="x-button" onClick={() => props.modalControl(false)}>
             X
