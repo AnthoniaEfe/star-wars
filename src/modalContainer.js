@@ -1,10 +1,9 @@
 import React from "react";
 
 const ModalContainer = (props) => {
-  let images =
-    "https://avatars.dicebear.com/api/open-peeps/" +
-    `${props.item.name}` +
-    ".svg";
+  let images = `https://avatars.dicebear.com/api/open-peeps/ 
+    ${props.item.name} 
+    .svg`;
   return (
     <div className="modalContainer" id={props.index}>
       <div className="modal">
